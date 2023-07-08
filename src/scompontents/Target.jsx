@@ -1,8 +1,9 @@
 //"https://olbm.mypinata.cloud/ipfs/QmQNJ5rnuknD53yPgj5uQeXWwzVk7Svhox9g7Qx7CSYgBN/1.json"
 import { useState } from 'react';
 import axios from 'axios';
-
-function Target(){
+import {Modal,ModalOverlay,ModalContent,ModalHeader,ModalFooter,ModalBody,ModalCloseButton,Button, useDisclosure,Lorem} from '@chakra-ui/react'
+import JsomUir from '../Modals/JsomUir';
+function Target({account}){
     const [fileImg, setFileImg] = useState(null);
     const [metadata, setMetadata] = useState();
     const [showImage, setShowImage] = useState(true);
@@ -79,42 +80,42 @@ function Target(){
   
     }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-const handleOpenModalimagedata = () => {
-    const newWindow = window.open('', '_blank', 'width=400,height=300');
-    newWindow.document.body.innerHTML = `
-      <div style="background-color: white; border: 1px solid gray; padding: 20px;">
-        <h2 style="margin-bottom: 10px;">ImagedataUri</h2>
-        <p>  <input type="text" value="https://scarlet-peculiar-llama-283.mypinata.cloud/ipfs/${imagedata}" placeholder="Enter modal content..." style="margin-bottom: 10px;" /></p>
-        <button style="background-color: #3f51b5; color: white; padding: 10px; border: none; border-radius: 4px; cursor: pointer; margin-top: 10px; ">Close Modal</button>
-      </div>
-    `;
-    newWindow.document.body.style.margin = '0';
-    newWindow.document.body.style.display = 'flex';
-    newWindow.document.body.style.justifyContent = 'center';
-    newWindow.document.body.style.alignItems = 'center';
-    newWindow.document.body.querySelector('button').addEventListener('click', () => {
-      newWindow.close();
-    });
-  };
+// const handleOpenModalimagedata = () => {
+//     const newWindow = window.open('', '_blank', 'width=400,height=300');
+//     newWindow.document.body.innerHTML = `
+//       <div style="background-color: white; border: 1px solid gray; padding: 20px;">
+//         <h2 style="margin-bottom: 10px;">ImagedataUri</h2>
+//         <p>  <input type="text" value="https://scarlet-peculiar-llama-283.mypinata.cloud/ipfs/${imagedata}" placeholder="Enter modal content..." style="margin-bottom: 10px;" /></p>
+//         <button style="background-color: #3f51b5; color: white; padding: 10px; border: none; border-radius: 4px; cursor: pointer; margin-top: 10px; ">Close Modal</button>
+//       </div>
+//     `;
+//     newWindow.document.body.style.margin = '0';
+//     newWindow.document.body.style.display = 'flex';
+//     newWindow.document.body.style.justifyContent = 'center';
+//     newWindow.document.body.style.alignItems = 'center';
+//     newWindow.document.body.querySelector('button').addEventListener('click', () => {
+//       newWindow.close();
+//     });
+//   };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-const handleOpenModaljsondata = () => {
-    const newWindow = window.open('', '_blank', 'width=400,height=300');
-    newWindow.document.body.innerHTML = `
-      <div style="background-color: white; border: 1px solid gray; padding: 20px;">
-        <h2 style="margin-bottom: 10px;">JsondataUri</h2>
-        <p>  <input type="text" value="https://scarlet-peculiar-llama-283.mypinata.cloud/ipfs/${jsondata}" placeholder="Enter modal content..." style="margin-bottom: 10px;" /></p>
-        <button style="background-color: #3f51b5; color: white; padding: 10px; border: none; border-radius: 4px; cursor: pointer; margin-top: 10px; ">Close Modal</button>
-      </div>
-    `;
-    newWindow.document.body.style.margin = '0';
-    newWindow.document.body.style.display = 'flex';
-    newWindow.document.body.style.justifyContent = 'center';
-    newWindow.document.body.style.alignItems = 'center';
-    newWindow.document.body.querySelector('button').addEventListener('click', () => {
-      newWindow.close();
-    });
-  };
+// const handleOpenModaljsondata = () => {
+//     const newWindow = window.open('', '_blank', 'width=400,height=300');
+//     newWindow.document.body.innerHTML = `
+//       <div style="background-color: white; border: 1px solid gray; padding: 20px;">
+//         <h2 style="margin-bottom: 10px;">JsondataUri</h2>
+//         <p>  <input type="text" value="https://scarlet-peculiar-llama-283.mypinata.cloud/ipfs/${jsondata}" placeholder="Enter modal content..." style="margin-bottom: 10px;" /></p>
+//         <button style="background-color: #3f51b5; color: white; padding: 10px; border: none; border-radius: 4px; cursor: pointer; margin-top: 10px; ">Close Modal</button>
+//       </div>
+//     `;
+//     newWindow.document.body.style.margin = '0';
+//     newWindow.document.body.style.display = 'flex';
+//     newWindow.document.body.style.justifyContent = 'center';
+//     newWindow.document.body.style.alignItems = 'center';
+//     newWindow.document.body.querySelector('button').addEventListener('click', () => {
+//       newWindow.close();
+//     });
+//   };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 const onClearjsondataUri=()=>{
     setjsondata("");
@@ -122,7 +123,7 @@ const onClearjsondataUri=()=>{
 const onClearimagedataUri=()=>{
     setimagedata("");
 };
-
+const { isOpen, onOpen, onClose } = useDisclosure()
     return(
 
         <div>
@@ -172,7 +173,20 @@ const onClearimagedataUri=()=>{
                           {showInput && 
                           (
                           <div>
-                             <input className="ml-3  w-[600px] h-[380px] rounded-lg border-2 text-center" type="text" onChange={(e) => setMetadata(e.target.value)} placeholder="자유로운 양식으로 입력해 주세요" style={{ wordWrap: 'break-word' }} />
+                              <textarea
+                                className="ml-3 w-[600px] h-[380px] rounded-lg border-2 text-center"
+                                type="text"
+                                onChange={(e) => setMetadata(e.target.value)}
+                                placeholder="자유로운 양식으로 입력해 주세요"
+                                style={{
+                                  wordWrap: 'break-word',
+                                  paddingTop: '175px', // Adjust the padding value to create space above the entered text
+                                  lineHeight: '2', // Adjust the line-height value for the entered text
+                                  textAlign: 'center',
+                                  verticalAlign: 'middle', // Center align the entered text vertically
+                                }}
+                              />
+                             {/* <textarea className="ml-3 w-[600px] h-[380px] rounded-lg border-2 text-center" type="text" onChange={(e) => setMetadata(e.target.value)} placeholder="자유로운 양식으로 입력해 주세요" style={{ wordWrap: 'break-word' }} /> */}
                           </div>
                           )
                           }
@@ -183,22 +197,41 @@ const onClearimagedataUri=()=>{
               (
                <div>
 
-                <div className='flex justify-end mr-3 mt-2 mb-3'>
-                    <button className='mr-0 hover:bg-gray-300 bg-gray-100 m-2 pl-5 pr-5 pt-3 pb-3 rounded-lg font-bold ' onClick={handleShowImageButtonClick}>
+                <div className='ml-auto mr-auto grid-cols-6 jus mt-2 mb-3 flex justify-end'>
+                  <div>
+                    <button className='mr-0 hover:bg-gray-300 bg-gray-100 m-2 pl-5 pr-5 pt-1 pb-1 rounded-lg ' onClick={handleShowImageButtonClick}>
                                 입력 방법
                     </button> 
-                    <button className='mr-0 hover:bg-gray-300 bg-gray-100 m-2 pl-5 pr-5 pt-3 pb-3 rounded-lg font-bold'onClick={ handleOpenModalimagedata } >
-                                ImageUri
+                    {/* ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */}
+                    <button onClick={onOpen} className="mr-0 hover:bg-gray-300 bg-gray-100 m-2 pl-5 pr-5 pt-1 pb-1 rounded-lg">
+                              ImageUri
+                    </button>
+
+                    <Modal onClose={onClose} isOpen={isOpen} isCentered>
+                      <ModalOverlay />
+                      <ModalContent>
+                        <ModalHeader>ImageUri</ModalHeader>
+                        <ModalCloseButton />
+                        <ModalBody>
+                          {/* <Lorem count={2} /> */}
+                          <div>
+                          https://scarlet-peculiar-llama-283.mypinata.cloud/ipfs/{imagedata}
+                          </div>
+                        </ModalBody>
+                        <ModalFooter>
+                          <Button onClick={onClose}>Close</Button>
+                        </ModalFooter>
+                      </ModalContent>
+                    </Modal>
+                    {/* ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */}
+                    <JsomUir/>
+                    <button className='mr-0 hover:bg-gray-300 bg-gray-100 m-2 pl-5 pr-5 pt-1 pb-1 rounded-lg'onClick={  onClearjsondataUri }>
+                                JsonDataUri 제거
                     </button> 
-                    <button className='mr-0 hover:bg-gray-300 bg-gray-100 m-2 pl-5 pr-5 pt-3 pb-3 rounded-lg font-bold 'onClick={  handleOpenModaljsondata }>
-                                JsonUri
+                    <button className=' hover:bg-gray-300 bg-gray-100 m-2 pl-5 pr-5 pt-1 pb-1 mr-7 rounded-lg'onClick={  onClearimagedataUri }>
+                                ImageDataUri 제거
                     </button> 
-                    <button className='mr-0 hover:bg-gray-300 bg-gray-100 m-2 pl-5 pr-5 pt-3 pb-3 rounded-lg font-bold 'onClick={  onClearjsondataUri }>
-                                JsonDataUri 제거하기
-                    </button> 
-                    <button className='mr-0 hover:bg-gray-300 bg-gray-100 m-2 pl-5 pr-5 pt-3 pb-3 rounded-lg font-bold 'onClick={  onClearimagedataUri }>
-                                ImageDataUri 제거하기
-                    </button> 
+                </div>
                 </div>
                 </div> 
               )

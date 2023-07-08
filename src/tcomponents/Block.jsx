@@ -5,7 +5,7 @@ import Table from './Table';
 
 
 function Block({account,setAccount}){
-    const [tokenid,setTokenid]=useState("");
+    // const [tokenid,setTokenid]=useState("");
     const [studentteacheraddress,setstudentteacheraddress]=useState("");
     const [studenttokenid,setstudentTokenid]=useState("");
     
@@ -49,12 +49,12 @@ function Block({account,setAccount}){
       }
 
 
-
-
+const [tokenid,setTokenid]=useState("");
+const [checkteacheraddress,setcheckteacheraddress]=useState("");
     const checkdata= async ()=>{
         try {
         //  if(!account) return;
-         const response = await contract.methods.getCheckGoalData(tokenid).call()
+         const response = await contract.methods.getCheckGoalData(checkteacheraddress,tokenid).call()
         //  console.log(response);
         const reponseObject = Object.values(response);
         // console.log(reponseObject[0]);
@@ -94,6 +94,7 @@ function Block({account,setAccount}){
             <div className='flex mt-2.5 ml-3 h-[30px] mr-2 '>
               <div className='mr-2'>학생 정보 : </div>
             <div>
+            <input value={checkteacheraddress} onChange={(e)=>{setcheckteacheraddress(e.target.value)}} placeholder="Teacheraddress" className="text-center mr-2"style={{ marginLeft: '2px',border: '1px solid black', borderRadius: '0.5rem' }} />
             <input value={tokenid} onChange={(e)=>{setTokenid(e.target.value)}} placeholder="TokenId" className="text-center mr-2"style={{ marginLeft: '2px',border: '1px solid black', borderRadius: '0.5rem' }} />
             <button onClick={checkdata}>확인</button>
             </div>

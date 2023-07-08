@@ -1,6 +1,7 @@
 import {contract} from '../web3.config'
 import { useEffect, useState } from "react";
 import axios from 'axios';
+import {Modal,ModalOverlay,ModalContent,ModalHeader,ModalFooter,ModalBody,ModalCloseButton,Button, useDisclosure,Lorem} from '@chakra-ui/react'
 
 function MakeNft({account}){
     const [metadata, setMetadata] = useState();
@@ -47,23 +48,23 @@ function MakeNft({account}){
         console.log(jsondata);
     },[jsondata])
     ////////////////////////////////////////////////////////////
-    const handleOpenModal = () => {
-      const newWindow = window.open('', '_blank', 'width=400,height=300');
-      newWindow.document.body.innerHTML = `
-        <div style="background-color: white; border: 1px solid gray; padding: 20px;">
-          <h2 style="margin-bottom: 10px;">메타마스크주소</h2>
-          <p>  <input type="text" value="https://scarlet-peculiar-llama-283.mypinata.cloud/ipfs/${jsondata}" placeholder="Enter modal content..." style="margin-bottom: 10px;" /></p>
-          <button style="background-color: #3f51b5; color: white; padding: 10px; border: none; border-radius: 4px; cursor: pointer; margin-top: 10px; ">Close Modal</button>
-        </div>
-      `;
-      newWindow.document.body.style.margin = '0';
-      newWindow.document.body.style.display = 'flex';
-      newWindow.document.body.style.justifyContent = 'center';
-      newWindow.document.body.style.alignItems = 'center';
-      newWindow.document.body.querySelector('button').addEventListener('click', () => {
-        newWindow.close();
-      });
-    };
+    // const handleOpenModal = () => {
+    //   const newWindow = window.open('', '_blank', 'width=400,height=300');
+    //   newWindow.document.body.innerHTML = `
+    //     <div style="background-color: white; border: 1px solid gray; padding: 20px;">
+    //       <h2 style="margin-bottom: 10px;">메타마스크주소</h2>
+    //       <p>  <input type="text" value="https://scarlet-peculiar-llama-283.mypinata.cloud/ipfs/${jsondata}" placeholder="Enter modal content..." style="margin-bottom: 10px;" /></p>
+    //       <button style="background-color: #3f51b5; color: white; padding: 10px; border: none; border-radius: 4px; cursor: pointer; margin-top: 10px; ">Close Modal</button>
+    //     </div>
+    //   `;
+    //   newWindow.document.body.style.margin = '0';
+    //   newWindow.document.body.style.display = 'flex';
+    //   newWindow.document.body.style.justifyContent = 'center';
+    //   newWindow.document.body.style.alignItems = 'center';
+    //   newWindow.document.body.querySelector('button').addEventListener('click', () => {
+    //     newWindow.close();
+    //   });
+    // };
     ////////////////////////////////////////////////////////////
 
     ////////////////////////////////////////////////////////////
@@ -105,6 +106,7 @@ function MakeNft({account}){
     }
     ////////////////////////////////////////////////////////////
 
+    const { isOpen, onOpen, onClose } = useDisclosure()
     ////////////////////////////////////////////////////////////
 
     return(
@@ -166,10 +168,35 @@ function MakeNft({account}){
                             업로드
                             </button>
   
-                            <button onClick={handleOpenModal} type='submit' className=" hover:bg-gray-300 bg-gray-100 m-2 pl-5 pr-5 pt-1 mr-3 pb-1 rounded-lg ">
+
+                            {/* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */}
+                            {/* <button onClick={onOpen} className="mr-0 hover:bg-gray-300 bg-gray-100 m-2 pl-5 pr-5 pt-3 pb-3 rounded-lg font-bold ">
+                                주소확인
+                            </button> */}
+
+                            <button onClick={onOpen} type='submit' className=" hover:bg-gray-300 bg-gray-100 m-2 pl-5 pr-5 pt-1 mr-3 pb-1 rounded-lg ">
                             NftMataDataUri확인
                             </button>
-                            
+
+
+                            <Modal onClose={onClose} isOpen={isOpen} isCentered>
+                              <ModalOverlay />
+                              <ModalContent>
+                                <ModalHeader>NftMataDataUri확인</ModalHeader>
+                                <ModalCloseButton />
+                                <ModalBody>
+                                  {/* <Lorem count={2} /> */}
+                                  <div>
+                                  https://scarlet-peculiar-llama-283.mypinata.cloud/ipfs/${jsondata}
+                                  </div>
+                                </ModalBody>
+                                <ModalFooter>
+                                  <Button onClick={onClose}>Close</Button>
+                                </ModalFooter>
+                              </ModalContent>
+                            </Modal>
+
+                            {/* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */}
                             <input value={teacheraddress} onChange={(e)=>{setteacheraddress(e.target.value)}} placeholder="선생님 메타마스크 주소" className="text-center ml-2"style={{ marginLeft: '2px',border: '1px solid black', borderRadius: '0.5rem' }} />
                             <input value={nftmatadatauri} onChange={(e)=>{setnftmatadatauri(e.target.value)}} placeholder="NftMataDataUri" className="text-center mr-2"style={{ marginLeft: '2px',border: '1px solid black', borderRadius: '0.5rem' }} />          
                             <button className='mr-5 hover:bg-gray-300 bg-gray-200' onClick={studentmintnft}>mintNft</button>   

@@ -140,7 +140,19 @@ return(
                             {showInput && 
                             (
                             <div>
-                               <input className="ml-3  w-[600px] h-[380px] rounded-lg border-2 text-center" type="text" onChange={(e) => setMetadata(e.target.value)} placeholder="♥아이들에게 따뜻한 격려의 한마다 부탁드려요.♥" style={{ wordWrap: 'break-word' }} />
+                              <textarea
+                                      className="ml-3 w-[600px] h-[380px] rounded-lg border-2 text-center"
+                                      type="text"
+                                      onChange={(e) => setMetadata(e.target.value)}
+                                      placeholder="♥아이들에게 따뜻한 격려의 한마다 부탁드려요.♥"
+                                      style={{
+                                        wordWrap: 'break-word',
+                                        paddingTop: '175px', // Adjust the padding value to create space above the entered text
+                                        lineHeight: '2', // Adjust the line-height value for the entered text
+                                        textAlign: 'center',
+                                        verticalAlign: 'middle', // Center align the entered text vertically
+                                      }}
+                                    />
                             </div>
                             )
                             }
