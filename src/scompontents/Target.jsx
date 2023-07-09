@@ -146,7 +146,7 @@ const { isOpen, onOpen, onClose } = useDisclosure()
                 {/* <input type="text" placeholder="{ 세부목표 입력 양식}" className="pl-10 pr-3 py-2 rounded-lg border-2 border-black bg-white w-[600px] h-[300px] text-center"
                 style={{ caretColor: 'transparent', outline: 'none' }}/> */}
                   <div className="rounded-lg border border-gray-300 p-5 w-[600px] h-[380px] ml-5 mr-2 flex justify-center items-center">
-                  <img className="py-2 rounded-lg border-2 border-gray-300 bg-white w-[580px] h-[370px]" src="images/Upload.png" alt="main image" />
+                  <img className="py-2 rounded-lg border-2 border-gray-300 bg-white w-[580px] h-[370px]" src="images/upload.png" alt="main image" />
                       </div>
                 {/* <img className="pl-1.5 pr-1.5 py-2 rounded-lg border-2 border-gray-300 bg-white w-[600px] h-[380px]" src="images/Upload.png" alt="main image" /> */}
                 {/* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////     */}
