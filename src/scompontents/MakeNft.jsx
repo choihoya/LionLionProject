@@ -199,7 +199,7 @@ function MakeNft({account}){
                             {/* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */}
                             <input value={teacheraddress} onChange={(e)=>{setteacheraddress(e.target.value)}} placeholder="선생님 메타마스크 주소" className="text-center ml-2"style={{ marginLeft: '2px',border: '1px solid black', borderRadius: '0.5rem' }} />
                             <input value={nftmatadatauri} onChange={(e)=>{setnftmatadatauri(e.target.value)}} placeholder="NftMataDataUri" className="text-center mr-2"style={{ marginLeft: '2px',border: '1px solid black', borderRadius: '0.5rem' }} />          
-                            <button className='mr-5 hover:bg-gray-300 bg-gray-200' onClick={studentmintnft}>mintNft</button>   
+                            <button className='mr-5 hover:bg-gray-300 bg-gray-200' onClick={studentmintnft}>mintSBT</button>   
   
                             <input value={studentchecktokenid} onChange={(e)=>{setstudentchecktokenid(e.target.value)}} placeholder="NftMataDataUri" className="text-center mr-2"style={{ marginLeft: '2px',border: '1px solid black', borderRadius: '0.5rem' }} />           
                             <button className='mr-5 hover:bg-gray-300 bg-gray-200' onClick={studentchecktokenidfunction}>
