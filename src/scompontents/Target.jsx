@@ -38,15 +38,15 @@ function Target({account}){
                     "Content-Type": "multipart/form-data"
                 },
             });
-            console.log(resFile.data.IpfsHash);
+            // console.log(resFile.data.IpfsHash);
             setimagedata(resFile.data.IpfsHash);
-            console.log(imagedata);
+            // console.log(imagedata);
             // const ImgHash = `ipfs://${resFile.data.IpfsHash}`;
             // console.log(ImgHash); 
 
         } catch (error) {
-            console.log("Error sending File to IPFS: ")
-            console.log(error)
+            console.error("Error sending File to IPFS: ")
+            console.error(error)
         }
     }
     }
@@ -72,10 +72,10 @@ function Target({account}){
                 );
                 // console.log(resJson.data.IpfsHash);
                 setjsondata(resJson.data.IpfsHash);  ;
-                console.log(jsondata);
+                // console.log(jsondata);
   
         }catch(error){
-            console.log(error)
+            console.error(error)
         }
   
     }
@@ -224,7 +224,7 @@ const { isOpen, onOpen, onClose } = useDisclosure()
                       </ModalContent>
                     </Modal>
                     {/* ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */}
-                    <JsomUir/>
+                    <JsomUir jsondata={jsondata}/>
                     <button className='mr-0 hover:bg-gray-300 bg-gray-100 m-2 pl-5 pr-5 pt-1 pb-1 rounded-lg'onClick={  onClearjsondataUri }>
                                 JsonDataUri 제거
                     </button> 

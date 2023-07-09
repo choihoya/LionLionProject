@@ -36,16 +36,16 @@ function MakeNft({account}){
               );
               // console.log(resJson.data.IpfsHash);
               setJsondata(resJson.data.IpfsHash);
-              console.log(jsondata);
+              // console.log(jsondata);
 
       }catch(error){
-          console.log(error)
+          console.error(error)
       }
 
   }
     
     useEffect(()=>{
-        console.log(jsondata);
+        // console.log(jsondata);
     },[jsondata])
     ////////////////////////////////////////////////////////////
     // const handleOpenModal = () => {
@@ -81,7 +81,7 @@ function MakeNft({account}){
        )
       //  console.log(response);
        settokinid(response);
-       console.log(tokinid);
+      //  console.log(tokinid);
     
       } catch (error) {
        console.error(error)
@@ -97,7 +97,7 @@ function MakeNft({account}){
       //  console.log(response);
        const numberresponse = Number(response);
        setstudentchecktokenid(numberresponse);
-       console.log(studentchecktokenid);
+      //  console.log(studentchecktokenid);
     
       } catch (error) {
        console.error(error)

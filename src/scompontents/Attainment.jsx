@@ -26,7 +26,7 @@ function Attainment( {account, setAccount}){
              from : account
          }
      )
-     console.log(response);
+    //  console.log(response);
     } catch (error) {
      console.error(error)
     }
@@ -55,7 +55,7 @@ const getblock2= async ()=>{
            from : account
        }
    )
-   console.log(response);
+//    console.log(response);
   } catch (error) {
    console.error(error)
   }
@@ -84,7 +84,7 @@ const getblock3= async ()=>{
            from : account
        }
    )
-   console.log(response);
+//    console.log(response);
   } catch (error) {
    console.error(error)
   }
@@ -113,7 +113,7 @@ const getblock4= async ()=>{
            from : account
        }
    )
-   console.log(response);
+//    console.log(response);
   } catch (error) {
    console.error(error)
   }
@@ -142,7 +142,7 @@ const getblock5= async ()=>{
            from : account
        }
    )
-   console.log(response);
+//    console.log(response);
   } catch (error) {
    console.error(error)
   }

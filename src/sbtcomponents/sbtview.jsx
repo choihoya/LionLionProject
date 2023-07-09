@@ -12,9 +12,9 @@ const getsbt = async ()=>{
     try {
         if(!contract) return;
         const response = await contract.methods.tokenURI(tokenId).call()
-        console.log(response);
+        // console.log(response);
         let remixresponse = await axios.get(response)
-        console.log(remixresponse)
+        // console.log(remixresponse)
         setImage(remixresponse.data.image);
         // console.log(image);
         setIdata(remixresponse.data.date);

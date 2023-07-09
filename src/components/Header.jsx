@@ -17,7 +17,7 @@ function Header({account,setAccount}) {
        const accounts = await window.ethereum.request({
           method:"eth_requestAccounts",
        });
-       console.log(accounts);
+      //  console.log(accounts);
        setAccount(accounts[0]);
 
       }catch(error){
@@ -43,10 +43,10 @@ const getTeacherauthority= async ()=>{
       from : account
     }
    )
-   console.log(response);
+  //  console.log(response);
   //  const numberresponse = Number(response);
   setteacheraddress(response);
-   console.log(teacheraddress);
+  //  console.log(teacheraddress);
 
   } catch (error) {
    console.error(error)

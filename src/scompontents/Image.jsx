@@ -23,7 +23,7 @@ const sendFileToIPFS = async (e) => {
                   "Content-Type": "multipart/form-data"
               },
           });
-          console.log(resFile);
+          // console.log(resFile);
   
 
           ImgHash = `ipfs://${resFile.data.IpfsHash}`;
@@ -33,8 +33,8 @@ const sendFileToIPFS = async (e) => {
 
 
       } catch (error) {
-          console.log("Error sending File to IPFS: ")
-          console.log(error)
+          console.error("Error sending File to IPFS: ")
+          console.error(error)
       }
   }
 }

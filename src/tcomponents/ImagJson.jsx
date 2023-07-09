@@ -45,11 +45,11 @@ const sendFileToIPFS = async (e) => {
 
           // console.log(resJson.data);    
           setPinataData(resJson.data.IpfsHash);
-          console.log(PinataData);
+          // console.log(PinataData);
 
       } catch (error) {
-          console.log("Error sending File & Json to IPFS: ")
-          console.log(error)
+          console.error("Error sending File & Json to IPFS: ")
+          console.error(error)
       }
   }
 }
@@ -86,7 +86,7 @@ const rrchangemetadata= async ()=>{
    )
   //  console.log(response);
   setrchangemetadata(response);
-   console.log(rchangemetadata);
+  //  console.log(rchangemetadata);
 
   } catch (error) {
    console.error(error)

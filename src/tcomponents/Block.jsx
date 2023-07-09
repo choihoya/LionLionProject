@@ -22,7 +22,7 @@ function Block({account,setAccount}){
         // const bullvalue = Object.values(response);
         // console.log(bullvalue);
         setteacheraddress(response)
-        console.log(teacheraddress);
+        // console.log(teacheraddress);
 
         } catch (error) {
          console.error(error)
@@ -32,12 +32,12 @@ function Block({account,setAccount}){
       const setstudent= async ()=>{
         try {
         //  if(!account) return;
-         const response = await contract.methods.getStudent(studentteacheraddress,studenttokenid).send(
+         const response = await contract.methods.setStudent(studentteacheraddress,studenttokenid).send(
             {
                 from : account
             }
          )
-         console.log(response);
+        //  console.log(response);
         // const reponseObject = Object.values(response);
         // console.log(response);
         // const bullvalue = Object.values(response);
