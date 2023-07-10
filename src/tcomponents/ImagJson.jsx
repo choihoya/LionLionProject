@@ -100,7 +100,7 @@ return(
         <div className="  mb-1 max-w-screen-xl mx-auto h-[530px] ">
             <div className="   ">
             <div className=' ml-8 font-semibold mt-3 mb-1'>
-            2. 학생이 보유한 SBT 메타데이터 정보 수정
+            2. 학생이 보유한 SBT 메타데이터 정보 변경
             </div>
         </div>
   
