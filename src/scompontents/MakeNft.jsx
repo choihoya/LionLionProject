@@ -137,7 +137,7 @@ function MakeNft({account}){
                             <div className='mb-5 ml-3 text-center font-semibold'>※SBT를 신청하기 위해서는 선생님의 메타마스크 주소가 필요합니다.</div>
                             <div className='mb-1 ml-3 text-center'>1. SBT 신청합니다. 입력 후 업로드 버튼을 눌러 주세요</div>    
                             <div className='mb-1 ml-3 text-center'>2. NftMataDataUri 버튼을 클릭하여 Uri를 복사해 주세요</div>
-                            <div className='mb-1 ml-3 text-center'>3. 선생님 메타마스크 주소와 Uri를 입력 후 mintNft버튼을 눌러주세요</div>       
+                            <div className='mb-1 ml-3 text-center'>3. 선생님 메타마스크 주소와 Uri를 입력 후 MintSBT버튼을 눌러주세요</div>       
                             <div className='mb-1 ml-3 text-center'>4. Uri를 입력 후 TokenId 버튼을 눌러 주세요</div> 
                             <div className='mb-1 ml-3 text-center'>5. TokenId 버튼의 값을 선생님께 말해 주세요</div>                            
                             </div>
@@ -199,7 +199,7 @@ function MakeNft({account}){
                             {/* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */}
                             <input value={teacheraddress} onChange={(e)=>{setteacheraddress(e.target.value)}} placeholder="선생님 메타마스크 주소" className="text-center ml-2"style={{ marginLeft: '2px',border: '1px solid black', borderRadius: '0.5rem' }} />
                             <input value={nftmatadatauri} onChange={(e)=>{setnftmatadatauri(e.target.value)}} placeholder="NftMataDataUri" className="text-center mr-2"style={{ marginLeft: '2px',border: '1px solid black', borderRadius: '0.5rem' }} />          
-                            <button className='mr-5 hover:bg-gray-300 bg-gray-200' onClick={studentmintnft}>mintSBT</button>   
+                            <button className='mr-5 hover:bg-gray-300 bg-gray-200' onClick={studentmintnft}>MintSBT</button>   
   
                             <input value={studentchecktokenid} onChange={(e)=>{setstudentchecktokenid(e.target.value)}} placeholder="NftMataDataUri" className="text-center mr-2"style={{ marginLeft: '2px',border: '1px solid black', borderRadius: '0.5rem' }} />           
                             <button className='mr-5 hover:bg-gray-300 bg-gray-200' onClick={studentchecktokenidfunction}>

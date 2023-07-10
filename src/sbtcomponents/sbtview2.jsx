@@ -17,7 +17,7 @@ const getsbt = async ()=>{
         console.log(remixresponse)
         setImage(remixresponse.data.image);
         // console.log(image);
-        setIdata(remixresponse.data.date);
+        setIdata(remixresponse.data.data);
      
     } catch (error) {
         
