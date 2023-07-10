@@ -14,7 +14,7 @@ const MakeMe = () => {
              1. 목표설정
             </div>
              <div className='ml-5  text-lg mb-3'>→  SBT 민팅하기</div>
-             <img className="rounded-lg h-[300px]" src="images/golsset-removebg-preview.png" alt="main image" />
+             <img className=" h-[300px]" src="images/golsset-removebg-preview.png" alt="main image" />
           </div>
           {/* ///////////////////////////////////////////////////////////////////////////////////////////////// */}
 
@@ -23,7 +23,7 @@ const MakeMe = () => {
              2. 목표달성
             </div>
             <div className='ml-5 text-lg mb-3'>→  목표 정보 pinata업로드</div>
-             <img className="rounded-lg h-[300px]" src="images/golss.png" alt="main image" />
+             <img className=" h-[300px]" src="images/golss.png" alt="main image" />
           </div>
             {/* ///////////////////////////////////////////////////////////////////////////////////////////////// */}
 
@@ -33,7 +33,7 @@ const MakeMe = () => {
             </div>
             <div className='ml-5 text-lg mb-3'>→  폴리곤 체인에 정보 저장</div>
              {/* <img className="rounded-lg h-[300px]" src="images/polygon.png" alt="main image" /> */}
-             <img className="rounded-lg h-[300px]" src="images/spol-removebg-preview.png" alt="main image" />
+             <img className=" h-[300px]" src="images/spol-removebg-preview.png" alt="main image" />
           {/* ///////////////////////////////////////////////////////////////////////////////////////////////// */}
           </div>
           <div className='bg-blue-100 w-[300px] ml-2 mr-2 rounded-lg'>
@@ -41,7 +41,7 @@ const MakeMe = () => {
             4. 정보확인
             </div>
             <div className='ml-5 text-lg mb-3'>→  선생님이 학생 정보 확인</div>
-             <img className="rounded-lg h-[300px] " src="images/teacherimage2-removebg-preview.png" alt="main image" />
+             <img className="h-[300px] " src="images/teacherimage2-removebg-preview.png" alt="main image" />
           {/* ///////////////////////////////////////////////////////////////////////////////////////////////// */}
 
           </div>
@@ -50,7 +50,7 @@ const MakeMe = () => {
              5. 정보 변경
             </div>
             <div className='ml-5 text-lg mb-3'>→  SBT MataData 변경</div>
-             <img className="rounded-lg h-[300px]" src="images/SBTTOKEN.png" alt="main image" />
+             <img className=" h-[300px]" src="images/SBTTOKEN.png" alt="main image" />
           </div>
     </div>
     </div>

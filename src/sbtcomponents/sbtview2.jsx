@@ -32,7 +32,7 @@ useEffect(()=>{
         <div className=' text-black mt-3.5 mb-2 max-w-screen-xl mx-auto flex'>
         <div className='ml-8'>2. TokenId를 입력하여 변경된 SBT MetaData 확인 : </div>
         <div className='text-white'>.</div>        
-        <input value={tokenId} onChange={(e)=>{settokenId(e.target.value)}} placeholder="NftMataDataUri" className="text-center mr-2"style={{ marginLeft: '2px',border: '1px solid black', borderRadius: '0.5rem' }} />           
+        <input value={tokenId} onChange={(e)=>{settokenId(e.target.value)}} placeholder="SBTMataDataUri" className="text-center mr-2"style={{ marginLeft: '2px',border: '1px solid black', borderRadius: '0.5rem' }} />           
                             <button className='mr-5 hover:bg-gray-300 bg-gray-200' onClick={getsbt}>
                               TokenId
                             </button>
@@ -62,7 +62,7 @@ useEffect(()=>{
             <div className=''>
             <div className="rounded-lg border border-gray-300 w-[600px] h-[380px] pr-3 flex justify-center items-center">
             {/* <img className='w-[700px] h-[330px] pt-0 mt-0 pl-10 pr-3 py-2 rounded-lg border-2'src="images/SBTLogo.png" alt="image1"/> */}
-            SBT변경된 메타데이터를 확인해 주세요!
+            변경된 SBT 메타데이터를 확인해 주세요!
             </div>
             </div>
              </div>

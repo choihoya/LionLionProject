@@ -136,7 +136,7 @@ function MakeNft({account}){
                             <div className='mt-1'>
                             <div className='mb-5 ml-3 text-center font-semibold'>※SBT를 신청하기 위해서는 선생님의 메타마스크 주소가 필요합니다.</div>
                             <div className='mb-1 ml-3 text-center'>1. SBT 신청합니다. 입력 후 업로드 버튼을 눌러 주세요</div>    
-                            <div className='mb-1 ml-3 text-center'>2. NftMataDataUri 버튼을 클릭하여 Uri를 복사해 주세요</div>
+                            <div className='mb-1 ml-3 text-center'>2. SBTMataDataUri 버튼을 클릭하여 Uri를 복사해 주세요</div>
                             <div className='mb-1 ml-3 text-center'>3. 선생님 메타마스크 주소와 Uri를 입력 후 MintSBT버튼을 눌러주세요</div>       
                             <div className='mb-1 ml-3 text-center'>4. Uri를 입력 후 TokenId 버튼을 눌러 주세요</div> 
                             <div className='mb-1 ml-3 text-center'>5. TokenId 버튼의 값을 선생님께 말해 주세요</div>                            
@@ -175,14 +175,14 @@ function MakeNft({account}){
                             </button> */}
 
                             <button onClick={onOpen} type='submit' className=" hover:bg-gray-300 bg-gray-100 m-2 pl-5 pr-5 pt-1 mr-3 pb-1 rounded-lg ">
-                            NftMataDataUri확인
+                            SBTMataDataUri확인
                             </button>
 
 
                             <Modal onClose={onClose} isOpen={isOpen} isCentered>
                               <ModalOverlay />
                               <ModalContent>
-                                <ModalHeader>NftMataDataUri확인</ModalHeader>
+                                <ModalHeader>SBTMataDataUri확인</ModalHeader>
                                 <ModalCloseButton />
                                 <ModalBody>
                                   {/* <Lorem count={2} /> */}
@@ -198,10 +198,10 @@ function MakeNft({account}){
 
                             {/* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */}
                             <input value={teacheraddress} onChange={(e)=>{setteacheraddress(e.target.value)}} placeholder="선생님 메타마스크 주소" className="text-center ml-2"style={{ marginLeft: '2px',border: '1px solid black', borderRadius: '0.5rem' }} />
-                            <input value={nftmatadatauri} onChange={(e)=>{setnftmatadatauri(e.target.value)}} placeholder="NftMataDataUri" className="text-center mr-2"style={{ marginLeft: '2px',border: '1px solid black', borderRadius: '0.5rem' }} />          
+                            <input value={nftmatadatauri} onChange={(e)=>{setnftmatadatauri(e.target.value)}} placeholder="SBTMataDataUri" className="text-center mr-2"style={{ marginLeft: '2px',border: '1px solid black', borderRadius: '0.5rem' }} />          
                             <button className='mr-5 hover:bg-gray-300 bg-gray-200' onClick={studentmintnft}>MintSBT</button>   
   
-                            <input value={studentchecktokenid} onChange={(e)=>{setstudentchecktokenid(e.target.value)}} placeholder="NftMataDataUri" className="text-center mr-2"style={{ marginLeft: '2px',border: '1px solid black', borderRadius: '0.5rem' }} />           
+                            <input value={studentchecktokenid} onChange={(e)=>{setstudentchecktokenid(e.target.value)}} placeholder="SBTMataDataUri" className="text-center mr-2"style={{ marginLeft: '2px',border: '1px solid black', borderRadius: '0.5rem' }} />           
                             <button className='mr-5 hover:bg-gray-300 bg-gray-200' onClick={studentchecktokenidfunction}>
                               TokenId
                             </button>

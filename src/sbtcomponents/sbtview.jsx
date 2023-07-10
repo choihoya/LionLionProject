@@ -32,7 +32,7 @@ useEffect(()=>{
         <div className=' text-black mt-3.5 mb-2 max-w-screen-xl mx-auto flex'>
         <div className='ml-8'>1. TokenId를 입력하여 SBT 신청 완료 확인 : </div>
         <div className='text-white'>.</div>        
-        <input value={tokenId} onChange={(e)=>{settokenId(e.target.value)}} placeholder="NftMataDataUri" className="text-center mr-2"style={{ marginLeft: '2px',border: '1px solid black', borderRadius: '0.5rem' }} />           
+        <input value={tokenId} onChange={(e)=>{settokenId(e.target.value)}} placeholder="SBTMataDataUri" className="text-center mr-2"style={{ marginLeft: '2px',border: '1px solid black', borderRadius: '0.5rem' }} />           
                             <button className='mr-5 hover:bg-gray-300 bg-gray-200' onClick={getsbt}>
                               TokenId
                             </button>
