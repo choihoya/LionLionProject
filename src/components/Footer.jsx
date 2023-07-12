@@ -26,7 +26,7 @@ function Footer() {
 
 
         <div className='mt-2 text-lg'>
-            주소 : 블록체인 스쿨 99팀 팀장&팀원 마음 어딘가 | 
+            주소 : 블록체인 스쿨 최균호팀 팀장 마음 어딘가 | 
             Copyright는 없습니다.
         </div>
 
