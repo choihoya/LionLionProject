@@ -17,7 +17,7 @@ const getsbt = async ()=>{
         console.log(remixresponse)
         setImage(remixresponse.data.image);
         // console.log(image);
-        setIdata(remixresponse.data.data);
+        setIdata(remixresponse.data.date);
      
     } catch (error) {
         
@@ -30,11 +30,11 @@ useEffect(()=>{
     return(
         <div className='mb-2.5'>
         <div className=' text-black mt-3.5 mb-2 max-w-screen-xl mx-auto flex'>
-        <div className='ml-8'>2. TokenId를 입력하여 변경된 SBT MetaData 확인 : </div>
+        <div className='ml-8'>2. TokenId를 입력하여 변경된 SBT MetaData 확인 (project 확인) : </div>
         <div className='text-white'>.</div>        
-        <input value={tokenId} onChange={(e)=>{settokenId(e.target.value)}} placeholder="SBTMataDataUri" className="text-center mr-2"style={{ marginLeft: '2px',border: '1px solid black', borderRadius: '0.5rem' }} />           
+        <input value={tokenId} onChange={(e)=>{settokenId(e.target.value)}} placeholder="TokenId" className="text-center mr-2"style={{ marginLeft: '2px',border: '1px solid black', borderRadius: '0.5rem' }} />           
                             <button className='mr-5 hover:bg-gray-300 bg-gray-200' onClick={getsbt}>
-                              TokenId
+                            SBT 확인
                             </button>
         </div>
 
@@ -42,11 +42,11 @@ useEffect(()=>{
         {image&&data?(
              <div >
             <div className='flex mb-5 ml-3'>
-            <div className="rounded-lg border border-gray-300 p-5 w-[600px] h-[380px] ml-5 mr-3.5 flex justify-center items-center">
+            <div className="rounded-lg border border-gray-300 p-5  w-[590px] h-[380px] ml-5 mr-5 flex justify-center items-center">
             <img className='w-[700px] h-[330px] pt-0 mt-0 pl-10 pr-3 py-2 rounded-lg border-2' src={image} alt="image1"/>
             </div>
             <div className=''>
-            <div className="rounded-lg border border-gray-300 w-[600px] h-[380px] pr-3 flex justify-center items-center">
+            <div className="rounded-lg border border-gray-300 w-[590px] h-[380px] pr-3 flex justify-center items-center">
             {data}
             </div>
             </div>
@@ -55,12 +55,12 @@ useEffect(()=>{
         ):(
             <div >
             <div className='flex mb-5 ml-3'>
-            <div className="rounded-lg border border-gray-300 p-5 w-[600px] h-[380px] ml-5 mr-3.5 flex justify-center items-center">
+            <div className="rounded-lg border border-gray-300 p-5 w-[590px] h-[380px] ml-5 mr-5 flex justify-center items-center">
                 {/* SBT토큰 신청합니다. && 기본 이미지 로고 확인 */}
             <img className='w-[700px] h-[330px] pt-0 mt-0 pl-10 pr-3 py-2 rounded-lg border-2'src="images/SBTLogo.png" alt="image1"/>
             </div>
             <div className=''>
-            <div className="rounded-lg border border-gray-300 w-[600px] h-[380px] pr-3 flex justify-center items-center">
+            <div className="rounded-lg border border-gray-300 w-[590px] h-[380px] pr-3 flex justify-center items-center">
             {/* <img className='w-[700px] h-[330px] pt-0 mt-0 pl-10 pr-3 py-2 rounded-lg border-2'src="images/SBTLogo.png" alt="image1"/> */}
             변경된 SBT 메타데이터를 확인해 주세요!
             </div>

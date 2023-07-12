@@ -74,12 +74,13 @@ const handleShowImageButtonClick = () => {
 
 //////////////////////////////////////////////////////////////////////////////////
 const[tokinid,settokinid]=useState();
+const[teacheraddress3,setteacheraddress3]=useState();
 const[nftmatadatauri,setnftmatadatauri]=useState();
 const[rchangemetadata,setrchangemetadata]=useState();
 const rrchangemetadata= async ()=>{
   try {
   //  if(!account) return;
-   const response = await contract.methods.changemetadata(tokinid,nftmatadatauri).send(
+   const response = await contract.methods.changemetadata(tokinid,teacheraddress3,nftmatadatauri).send(
     {
       from : account
     }
@@ -100,7 +101,7 @@ return(
         <div className="  mb-1 max-w-screen-xl mx-auto h-[530px] ">
             <div className="   ">
             <div className=' ml-8 font-semibold mt-3 mb-1'>
-            2. 학생이 보유한 SBT 메타데이터 정보 변경
+            3. 학생이 보유한 SBT 메타데이터 정보 변경
             </div>
         </div>
   
@@ -112,7 +113,7 @@ return(
                   <div className="flex mb-3 ">
                   {/* <input type="text" placeholder="{ 세부목표 입력 양식}" className="pl-10 pr-3 py-2 rounded-lg border-2 border-black bg-white w-[600px] h-[300px] text-center"
                   style={{ caretColor: 'transparent', outline: 'none' }}/> */}
-                                    <div className="rounded-lg border border-gray-300 w-[600px] h-[380px] mr-1 flex justify-center items-center">
+                                    <div className="rounded-lg border border-gray-300 w-[600px] h-[380px] mr-1 ml-1.5 flex justify-center items-center">
                                     <img className="w-[600px] h-[350px] pl-10 pr-3 py-2 rounded-lg border-2 border-black bg-white " src="images/complete.png" alt="main image" />
                       </div>
                   {/* <img className="w-[600px] h-[380px] pl-10 pr-3 py-2 rounded-lg border-2 border-black bg-white " src="images/complete.png" alt="main image" /> */}
@@ -161,8 +162,8 @@ return(
                   </form>
                 {PinataData ? 
                 (
-                 <div className=" ml-24 mt-3">
-                  <button className=' hover:bg-blue-300 bg-blue-100 m-2 pl-3 pr-3 pt-2 pb-2 mr-2 rounded-lg ' onClick={handleShowImageButtonClick}>
+                 <div className=" ml-15.5 mt-3">
+                  <button className=' hover:bg-blue-300 bg-blue-100 m-2 pl-3 pr-3 pt-2 pb-2 mr-3.5 rounded-lg ' onClick={handleShowImageButtonClick}>
                                   입력 방법
                       </button> 
                       
@@ -188,6 +189,7 @@ return(
 
                     {/* /////////////////////////////////// */}
                     <input value={tokinid} onChange={(e)=>{settokinid(e.target.value)}} placeholder="tokenId" className="text-center ml-2 pl-2 pr-2"style={{ marginLeft: '2px',border: '1px solid black', borderRadius: '0.5rem' }} />
+                    <input value={teacheraddress3} onChange={(e)=>{setteacheraddress3(e.target.value)}} placeholder="선생님 메타마스크 주소" className="text-center ml-2 pl-2 pr-2"style={{ marginLeft: '2px',border: '1px solid black', borderRadius: '0.5rem' }} />
                     <input value={nftmatadatauri} onChange={(e)=>{setnftmatadatauri(e.target.value)}} placeholder="NftMataDataUri" className="text-center mr-2 pl-16 pr-16"style={{ marginLeft: '2px',border: '1px solid black', borderRadius: '0.5rem' }} />          
                     <button className='mr-5 hover:bg-blue-300 bg-blue-200 font-semibold' onClick={rrchangemetadata}>MetaData변경</button>   
                     {/* /////////////////////////////////// */}

@@ -47,34 +47,15 @@ function MakeNft({account}){
     useEffect(()=>{
         // console.log(jsondata);
     },[jsondata])
-    ////////////////////////////////////////////////////////////
-    // const handleOpenModal = () => {
-    //   const newWindow = window.open('', '_blank', 'width=400,height=300');
-    //   newWindow.document.body.innerHTML = `
-    //     <div style="background-color: white; border: 1px solid gray; padding: 20px;">
-    //       <h2 style="margin-bottom: 10px;">메타마스크주소</h2>
-    //       <p>  <input type="text" value="https://scarlet-peculiar-llama-283.mypinata.cloud/ipfs/${jsondata}" placeholder="Enter modal content..." style="margin-bottom: 10px;" /></p>
-    //       <button style="background-color: #3f51b5; color: white; padding: 10px; border: none; border-radius: 4px; cursor: pointer; margin-top: 10px; ">Close Modal</button>
-    //     </div>
-    //   `;
-    //   newWindow.document.body.style.margin = '0';
-    //   newWindow.document.body.style.display = 'flex';
-    //   newWindow.document.body.style.justifyContent = 'center';
-    //   newWindow.document.body.style.alignItems = 'center';
-    //   newWindow.document.body.querySelector('button').addEventListener('click', () => {
-    //     newWindow.close();
-    //   });
-    // };
-    ////////////////////////////////////////////////////////////
-
-    ////////////////////////////////////////////////////////////
+ 
     const[teacheraddress,setteacheraddress]=useState();
+    const[studentaddress,setstudentaddress]=useState();   
     const[nftmatadatauri,setnftmatadatauri]=useState();
     const[tokinid,settokinid]=useState();
     const studentmintnft= async ()=>{
       try {
       //  if(!account) return;
-       const response = await contract.methods.mintNft(teacheraddress,nftmatadatauri).send(
+       const response = await contract.methods.mintNft(teacheraddress,studentaddress,nftmatadatauri).send(
         {
           from : account
         }
@@ -149,7 +130,14 @@ function MakeNft({account}){
                           {showInput && 
                           (
                           <div>
-                             <input className="ml-3 w-[600px] h-[230px] rounded-lg border-2 text-center" type="text" onChange={(e) => setMetadata(e.target.value)} placeholder="SBT토큰을 신청합니다. 입력" style={{ wordWrap: 'break-word' }} />
+                             <textarea className="ml-3 w-[600px] h-[230px] rounded-lg border-2 text-center" type="text" onChange={(e) => setMetadata(e.target.value)} placeholder="SBT토큰을 신청합니다. 입력" 
+                              style={{
+                                wordWrap: 'break-word',
+                                paddingTop: '100px', // Adjust the padding value to create space above the entered text
+                                lineHeight: '2', // Adjust the line-height value for the entered text
+                                textAlign: 'center',
+                                verticalAlign: 'middle', // Center align the entered text vertically
+                              }}/>
                           </div>
                           )
                           }
@@ -163,8 +151,8 @@ function MakeNft({account}){
                           {/* ////////////////////////////////////////// */}
                           {/* ///////////// */} {/*tokenId 확인 하기*/}  {/* ///////////// */}
 
-                            <div>
-                            <button type='submit' className=" hover:bg-gray-300 bg-gray-100 m-2 pl-5 pr-5 pt-1 mr-2 pb-1 rounded-lg">
+                            <div className=' ml-8'>
+                            <button type='submit' className=" hover:bg-gray-300 bg-gray-100 m-2 pl-3 pr-3 pt-1 mr-2 pb-1 rounded-lg">
                             업로드
                             </button>
   
@@ -174,7 +162,7 @@ function MakeNft({account}){
                                 주소확인
                             </button> */}
 
-                            <button onClick={onOpen} type='submit' className=" hover:bg-gray-300 bg-gray-100 m-2 pl-5 pr-5 pt-1 mr-3 pb-1 rounded-lg ">
+                            <button onClick={onOpen} type='submit' className=" hover:bg-gray-300 bg-gray-100 m-2 pl-3 pr-3 pt-1 mr-3 pb-1 rounded-lg ">
                             SBTMataDataUri확인
                             </button>
 
@@ -187,7 +175,7 @@ function MakeNft({account}){
                                 <ModalBody>
                                   {/* <Lorem count={2} /> */}
                                   <div>
-                                  https://scarlet-peculiar-llama-283.mypinata.cloud/ipfs/${jsondata}
+                                  https://scarlet-peculiar-llama-283.mypinata.cloud/ipfs/{jsondata}
                                   </div>
                                 </ModalBody>
                                 <ModalFooter>
@@ -195,19 +183,21 @@ function MakeNft({account}){
                                 </ModalFooter>
                               </ModalContent>
                             </Modal>
-
+                       
                             {/* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */}
                             <input value={teacheraddress} onChange={(e)=>{setteacheraddress(e.target.value)}} placeholder="선생님 메타마스크 주소" className="text-center ml-2"style={{ marginLeft: '2px',border: '1px solid black', borderRadius: '0.5rem' }} />
-                            <input value={nftmatadatauri} onChange={(e)=>{setnftmatadatauri(e.target.value)}} placeholder="SBTMataDataUri" className="text-center mr-2"style={{ marginLeft: '2px',border: '1px solid black', borderRadius: '0.5rem' }} />          
+                            <input value={studentaddress} onChange={(e)=>{setstudentaddress(e.target.value)}} placeholder="본인의 메타마스크 주소" className="text-center ml-2"style={{ marginLeft: '2px',border: '1px solid black', borderRadius: '0.5rem' }} />
+                            <input value={nftmatadatauri} onChange={(e)=>{setnftmatadatauri(e.target.value)}} placeholder="SBTMataDataUri" className="text-center mr-2"style={{ marginLeft: '2px',border: '1px solid black', borderRadius: '0.5rem' ,
+                              width: '130px'}} />          
                             <button className='mr-5 hover:bg-gray-300 bg-gray-200' onClick={studentmintnft}>MintSBT</button>   
   
-                            <input value={studentchecktokenid} onChange={(e)=>{setstudentchecktokenid(e.target.value)}} placeholder="SBTMataDataUri" className="text-center mr-2"style={{ marginLeft: '2px',border: '1px solid black', borderRadius: '0.5rem' }} />           
+                            <input value={studentchecktokenid} onChange={(e)=>{setstudentchecktokenid(e.target.value)}} placeholder="SBTMataDataUri" className="text-center mr-2"style={{ marginLeft: '2px',border: '1px solid black', borderRadius: '0.5rem', width: '130px'}} />           
                             <button className='mr-5 hover:bg-gray-300 bg-gray-200' onClick={studentchecktokenidfunction}>
                               TokenId
                             </button>
                             {/* {studentchecktokenid && <p>TokenId : {studentchecktokenid}</p>}        */}
 
-                            <button className='ml-3 hover:bg-gray-300 bg-gray-100 m-2 pl-5 pr-5 pt-1 mr-2 pb-1 rounded-lg' onClick={handleShowImageButtonClick}>
+                            <button className='ml-3 hover:bg-gray-300 bg-gray-100 m-2 pl-3 pr-3 pt-1 mr-2 pb-1 rounded-lg' onClick={handleShowImageButtonClick}>
                               입력 방법
                             </button>   
                             </div>

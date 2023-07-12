@@ -10,24 +10,24 @@ function Block({account,setAccount}){
     const [studenttokenid,setstudentTokenid]=useState("");
     
     const [studentdata,setstudentdata]=useState([]);
-    const [teacheraddress,setteacheraddress]=useState("");
+    // const [teacheraddress,setteacheraddress]=useState("");
 
-    const checkteacher= async ()=>{
-        try {
-        //  if(!account) return;
-         const response = await contract.methods.getTeacher(teacheraddress).call()
-        //  console.log(response);
-        // const reponseObject = Object.values(response);
-        // console.log(response);
-        // const bullvalue = Object.values(response);
-        // console.log(bullvalue);
-        setteacheraddress(response)
-        // console.log(teacheraddress);
+    // const checkteacher= async ()=>{
+    //     try {
+    //     //  if(!account) return;
+    //      const response = await contract.methods.getTeacher(teacheraddress).call()
+    //     //  console.log(response);
+    //     // const reponseObject = Object.values(response);
+    //     // console.log(response);
+    //     // const bullvalue = Object.values(response);
+    //     // console.log(bullvalue);
+    //     setteacheraddress(response)
+    //     // console.log(teacheraddress);
 
-        } catch (error) {
-         console.error(error)
-        }
-      }
+    //     } catch (error) {
+    //      console.error(error)
+    //     }
+    //   }
 
       const setstudent= async ()=>{
         try {
@@ -70,15 +70,15 @@ const [checkteacheraddress,setcheckteacheraddress]=useState("");
         <div>
         <div className="mb-1 max-w-screen-xl mx-auto h-[35px] flex  ">
             <div className='   ml-8 font-semibold text-center mt-2.5 '>
-            1. 폴리곤체인에 저장된 학생 정보 확인
+            2. 폴리곤체인에 저장된 학생 정보 확인
             </div>
             <div className='flex mt-2.5 ml-3 h-[30px]'>
 
-            <div>
+            {/* <div>
             <input value={teacheraddress} onChange={(e)=>{setteacheraddress(e.target.value)}}  
             placeholder="선생님 메타마스크 주소" className="text-center mr-2"style={{ marginLeft: '2px',border: '1px solid black', borderRadius: '0.5rem' }} />
             <button onClick={checkteacher} className='mr-5'>권한확인</button>                
-            </div>
+            </div> */}
             
             <div>
             <input value={studentteacheraddress} onChange={(e)=>{setstudentteacheraddress(e.target.value)}}   placeholder="선생님 메타마스크 주소" className="text-center ml-2"style={{ marginLeft: '2px',border: '1px solid black', borderRadius: '0.5rem' }} />

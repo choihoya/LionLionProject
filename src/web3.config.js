@@ -1,5 +1,5 @@
 import Web3 from 'web3' 
-export const CONTRACT_ADDRESS='0x5B4755d015061ab0cd2aD17b0745AED3F8501228'
+export const CONTRACT_ADDRESS='0x1a922162927FdD21A0cFb7ea9892310fe9d30636'
 export const CONTRACT_ABI=[
 	{
 		"inputs": [],
@@ -82,6 +82,11 @@ export const CONTRACT_ABI=[
 				"type": "uint256"
 			},
 			{
+				"internalType": "address",
+				"name": "_teacher",
+				"type": "address"
+			},
+			{
 				"internalType": "string",
 				"name": "_studentNftMetaData",
 				"type": "string"
@@ -97,6 +102,11 @@ export const CONTRACT_ABI=[
 			{
 				"internalType": "address",
 				"name": "teacheraddress",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "studentaddress",
 				"type": "address"
 			},
 			{
@@ -455,6 +465,37 @@ export const CONTRACT_ABI=[
 		"inputs": [
 			{
 				"internalType": "address",
+				"name": "teacheraddress",
+				"type": "address"
+			}
+		],
+		"name": "checkstudentdatafunction",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "studentNftMetaData",
+						"type": "string"
+					}
+				],
+				"internalType": "struct NFT.StudentData[]",
+				"name": "",
+				"type": "tuple[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
 				"name": "",
 				"type": "address"
 			}
@@ -687,6 +728,25 @@ export const CONTRACT_ABI=[
 			}
 		],
 		"name": "ownerOf",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "setstudentaddress",
 		"outputs": [
 			{
 				"internalType": "address",

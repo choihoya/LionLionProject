@@ -4,12 +4,15 @@ import Footer from "../components/Footer";
 import Line from "../tcomponents/Line";
 import Block from "../tcomponents/Block";
 import ImagJson from "../tcomponents/ImagJson";
+import CheckStudentData from "../tcomponents/CheckStudentData";
 
 function Teacher({account,setAccount}){
     return(
         <div>
             <Header account={account} setAccount={setAccount} />
             <DownHeader/>
+            <Line/>
+            <CheckStudentData account={account} setAccount={setAccount} />
             <Line/>
             <Block account={account} setAccount={setAccount}/>
             <Line/>
