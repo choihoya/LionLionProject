@@ -1,5 +1,5 @@
 import Web3 from 'web3' 
-export const CONTRACT_ADDRESS='0xFCb035E710af91BecE8dE3ab54B71fa9915F46A2'
+export const CONTRACT_ADDRESS='0xc36b2DDB7A6765C68D276641dd3Dc0572773b3C7'
 export const CONTRACT_ABI=[
 	{
 		"inputs": [],
@@ -77,14 +77,14 @@ export const CONTRACT_ABI=[
 	{
 		"inputs": [
 			{
-				"internalType": "uint256",
-				"name": "_tokenId",
-				"type": "uint256"
-			},
-			{
 				"internalType": "address",
 				"name": "_teacher",
 				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_tokenId",
+				"type": "uint256"
 			},
 			{
 				"internalType": "string",
@@ -465,7 +465,7 @@ export const CONTRACT_ABI=[
 		"inputs": [
 			{
 				"internalType": "address",
-				"name": "teacheraddress",
+				"name": "_teacher",
 				"type": "address"
 			}
 		],

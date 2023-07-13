@@ -37,7 +37,7 @@ function Block({account,setAccount}){
                 from : account
             }
          )
-        //  console.log(response);
+         console.log(response);
         // const reponseObject = Object.values(response);
         // console.log(response);
         // const bullvalue = Object.values(response);

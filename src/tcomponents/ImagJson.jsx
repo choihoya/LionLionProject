@@ -33,7 +33,7 @@ const sendFileToIPFS = async (e) => {
           const resJson = await axios.post(
             'https://api.pinata.cloud/pinning/pinJSONToIPFS',
             {
-              detail: metadata,
+              data: metadata,
               image: `https://scarlet-peculiar-llama-283.mypinata.cloud/ipfs/${ImgHash}`,
             },
             {
@@ -188,8 +188,8 @@ return(
                     </Modal>
 
                     {/* /////////////////////////////////// */}
-                    <input value={tokinid} onChange={(e)=>{settokinid(e.target.value)}} placeholder="tokenId" className="text-center ml-2 pl-2 pr-2"style={{ marginLeft: '2px',border: '1px solid black', borderRadius: '0.5rem' }} />
-                    <input value={teacheraddress3} onChange={(e)=>{setteacheraddress3(e.target.value)}} placeholder="선생님 메타마스크 주소" className="text-center ml-2 pl-2 pr-2"style={{ marginLeft: '2px',border: '1px solid black', borderRadius: '0.5rem' }} />
+                    <input value={tokinid} onChange={(e)=>{settokinid(e.target.value)}} placeholder="선생님 메타마스크 주소" className="text-center ml-2 pl-2 pr-2"style={{ marginLeft: '2px',border: '1px solid black', borderRadius: '0.5rem' }} />
+                    <input value={teacheraddress3} onChange={(e)=>{setteacheraddress3(e.target.value)}} placeholder="tokenId" className="text-center ml-2 pl-2 pr-2"style={{ marginLeft: '2px',border: '1px solid black', borderRadius: '0.5rem' }} />
                     <input value={nftmatadatauri} onChange={(e)=>{setnftmatadatauri(e.target.value)}} placeholder="NftMataDataUri" className="text-center mr-2 pl-16 pr-16"style={{ marginLeft: '2px',border: '1px solid black', borderRadius: '0.5rem' }} />          
                     <button className='mr-5 hover:bg-blue-300 bg-blue-200 font-semibold' onClick={rrchangemetadata}>MetaData변경</button>   
                     {/* /////////////////////////////////// */}
