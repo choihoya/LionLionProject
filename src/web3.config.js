@@ -1,5 +1,5 @@
 import Web3 from 'web3' 
-export const CONTRACT_ADDRESS='0x1a922162927FdD21A0cFb7ea9892310fe9d30636'
+export const CONTRACT_ADDRESS='0xFCb035E710af91BecE8dE3ab54B71fa9915F46A2'
 export const CONTRACT_ABI=[
 	{
 		"inputs": [],

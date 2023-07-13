@@ -130,7 +130,7 @@ function MakeNft({account}){
                           {showInput && 
                           (
                           <div>
-                             <textarea className="ml-3 w-[600px] h-[230px] rounded-lg border-2 text-center" type="text" onChange={(e) => setMetadata(e.target.value)} placeholder="SBT토큰을 신청합니다. 입력" 
+                             <textarea className="ml-3 w-[600px] h-[230px] rounded-lg border-2 text-center" type="text" onChange={(e) => setMetadata(e.target.value)} placeholder="SBT 신청합니다. 입력" 
                               style={{
                                 wordWrap: 'break-word',
                                 paddingTop: '100px', // Adjust the padding value to create space above the entered text
